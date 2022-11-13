@@ -3,7 +3,7 @@ package io.zettar;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
-public record OrderUpdate(
+public record OrderState(
         String orderId,
         String groupId,
         ZonedDateTime timeStamp,

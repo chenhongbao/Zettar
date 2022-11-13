@@ -1,2 +1,6 @@
-package io.zettar;public interface SnapshotHandler {
+package io.zettar;
+
+@FunctionalInterface
+public interface SnapshotHandler {
+    void handle(Snapshot snapshot);
 }

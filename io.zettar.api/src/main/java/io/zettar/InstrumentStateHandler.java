@@ -1,2 +1,6 @@
-package io.zettar;public interface InstrumentStateHandler {
+package io.zettar;
+
+@FunctionalInterface
+public interface InstrumentStateHandler {
+    void handle(InstrumentState state);
 }

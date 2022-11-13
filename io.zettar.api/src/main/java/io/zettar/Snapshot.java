@@ -1,4 +1,25 @@
 package io.zettar;
 
-public record Tick(String instrumentId, String instrumentName) {
+import java.time.ZonedDateTime;
+import java.util.Date;
+
+public record Snapshot(
+        String exchangeId,
+        String instrumentId,
+        String instrumentName,
+        ZonedDateTime timeStamp,
+        Date tradingDay,
+        double askPrice,
+        long askVolume,
+        double bidPrice,
+        long bidVolume,
+        double averagePrice,
+        double lastPrice,
+        long volume,
+        long openInterest,
+        double settlementPrice,
+        double closePrice,
+        double preSettlementPrice,
+        double preClosePrice,
+        double preOpenInterest) {
 }
