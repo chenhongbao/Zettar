@@ -1,6 +1,5 @@
 package io.zettar.core.internal;
 
-import io.zettar.*;
 import io.zettar.core.Event;
 import io.zettar.core.EventListener;
 import io.zettar.core.EventType;

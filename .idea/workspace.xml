@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="Create EventRouter to handle all events.">
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/SourceAdapter.java" afterDir="false" />
+    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="Move all data routing into EventRouter.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOrigin.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOrigin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventType.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/OriginType.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOriginType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickEngine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventRouter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickEngineImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,11 +17,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Record" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -68,8 +62,32 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="io.zettar.core.internal" />
       <recent name="io.zettar" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EventUtilsTest.getSourceId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="io.zettar.core" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.zettar.core.internal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="io.zettar.core.internal" />
+      <option name="MAIN_CLASS_NAME" value="io.zettar.core.internal.EventUtilsTest" />
+      <option name="METHOD_NAME" value="getSourceId" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EventUtilsTest.getSourceId" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -101,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668391035509</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Move all data routing into EventRouter.">
+      <created>1668392634578</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668392634578</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -154,6 +179,7 @@
     <MESSAGE value="Add project skeleton." />
     <MESSAGE value="Add Quick method for fast strategy implementation." />
     <MESSAGE value="Create EventRouter to handle all events." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create EventRouter to handle all events." />
+    <MESSAGE value="Move all data routing into EventRouter." />
+    <option name="LAST_COMMIT_MESSAGE" value="Move all data routing into EventRouter." />
   </component>
 </project>

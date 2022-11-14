@@ -2,12 +2,19 @@ package io.zettar.core.internal;
 
 import io.zettar.Source;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class EventUtils {
+    private static final AtomicLong eventId = new AtomicLong(0);
+
     public static String getEventId() {
-        return null;
+        return Long.toString(eventId.incrementAndGet());
     }
 
-    public static String getSourceId(Source source) {
-        return null;
+    public static String getSourceId(Object object) {
+        if (object == null) {
+            return "{null}";
+        }
+        return object.getClass().getName() + "@" + object.hashCode();
     }
 }
