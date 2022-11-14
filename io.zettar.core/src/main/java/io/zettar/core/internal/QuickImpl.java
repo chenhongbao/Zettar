@@ -1,19 +1,15 @@
 package io.zettar.core.internal;
 
 import io.zettar.*;
-import io.zettar.core.EventListener;
 import io.zettar.core.Quick;
 
-import java.util.Collection;
-import java.util.HashSet;
+import java.util.logging.Logger;
 
-class QuickImpl implements Quick, TradeHandler, SnapshotHandler, OrderStateHandler, InstrumentStateHandler {
-    private final HashSet<EventListener> clients = new HashSet<>();
-    private final Source src;
+class QuickImpl implements Quick {
+    private final EventRouter evt;
 
-    QuickImpl(Source source, Collection<EventListener> listeners) {
-        src = source;
-        clients.addAll(listeners);
+    QuickImpl(EventRouter router) {
+        evt = router;
     }
 
     @Override
@@ -37,22 +33,7 @@ class QuickImpl implements Quick, TradeHandler, SnapshotHandler, OrderStateHandl
     }
 
     @Override
-    public void handle(OrderState state) {
-
-    }
-
-    @Override
-    public void handle(Snapshot snapshot) {
-
-    }
-
-    @Override
-    public void handle(Trade trade) {
-
-    }
-
-    @Override
-    public void handle(InstrumentState state) {
-
+    public Logger getLogger(String loggerName) {
+        return null;
     }
 }

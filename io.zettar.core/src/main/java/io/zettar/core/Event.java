@@ -3,8 +3,9 @@ package io.zettar.core;
 import java.time.ZonedDateTime;
 
 public record Event(
+        String eventId,
         EventType type,
         Object event,
-        EventSource origin,
+        EventOrigin origin,
         ZonedDateTime timeStamp) {
 }

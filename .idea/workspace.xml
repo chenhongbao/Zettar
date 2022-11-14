@@ -4,22 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="Add project skeleton.">
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventSource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventSourceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Quick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickBuilderImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickHandlerWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickImpl.java" afterDir="false" />
+    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="Add Quick method for fast strategy implementation.">
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventRouter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/io.zettar.core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOrigin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventSourceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/OriginType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Quick.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Quick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickBuilderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickEngineImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickHandlerWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickHandlerWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.web/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668327690387</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add Quick method for fast strategy implementation.">
+      <created>1668387786005</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668387786005</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -102,6 +106,31 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="5669e552-a510-4730-8c1e-8f61a777b98b">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -109,10 +138,16 @@
         </entry>
       </map>
     </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="5669e552-a510-4730-8c1e-8f61a777b98b" value="TOOL_WINDOW" />
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add project skeleton." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add project skeleton." />
+    <MESSAGE value="Add Quick method for fast strategy implementation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Quick method for fast strategy implementation." />
   </component>
 </project>
