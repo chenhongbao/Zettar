@@ -7,7 +7,7 @@ public record Snapshot(
         String exchangeId,
         String instrumentId,
         String instrumentName,
-        ZonedDateTime timeStamp,
+        ZonedDateTime whenUpdated,
         Date tradingDay,
         double askPrice,
         long askVolume,

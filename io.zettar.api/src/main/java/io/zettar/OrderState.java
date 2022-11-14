@@ -5,7 +5,7 @@ import java.util.Date;
 
 public record OrderState(
         String orderId,
-        ZonedDateTime timeStamp,
+        ZonedDateTime whenUpdated,
         Date tradingDay,
         long tradeQuantity,
         int submitStateCode,

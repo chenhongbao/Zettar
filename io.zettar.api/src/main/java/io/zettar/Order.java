@@ -1,6 +1,7 @@
 package io.zettar;
 
 public record Order(
+        String clientId,
         String orderId,
         String exchangeId,
         String instrumentId,

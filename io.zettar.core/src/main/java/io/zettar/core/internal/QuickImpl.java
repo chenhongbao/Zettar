@@ -36,4 +36,13 @@ class QuickImpl implements Quick {
     public Logger getLogger(String loggerName) {
         return null;
     }
+
+    public void update(OrderState event) {
+    }
+
+    public void update(InstrumentState event) {
+    }
+
+    public void update(Trade event) {
+    }
 }

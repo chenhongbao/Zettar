@@ -9,7 +9,7 @@ public record Trade(
         String exchangeId,
         String instrumentId,
         String instrumentName,
-        ZonedDateTime timeStamp,
+        ZonedDateTime whenUpdated,
         Date tradingDay,
         double price,
         long volume) {
