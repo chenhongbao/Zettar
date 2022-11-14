@@ -9,7 +9,7 @@ public class EventUtils {
         return Long.toString(eventId.incrementAndGet());
     }
 
-    public static String getSourceId(Object object) {
+    public static String getInstanceId(Object object) {
         if (object == null) {
             return "{null}";
         }

@@ -8,7 +8,9 @@ public record OrderState(
         ZonedDateTime whenUpdated,
         Date tradingDay,
         long tradeQuantity,
+        long leaveQuantity,
         int submitStateCode,
         int stateCode,
+        boolean good,
         String message) {
 }

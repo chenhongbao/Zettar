@@ -7,9 +7,7 @@ public enum EventType {
     TradeUpdate,
     InstrumentStateUpdate,
     SnapshotUpdate,
-    Logging,
-    SystemInfo,
-    SystemWarning,
-    SystemError,
+    ClientLogging,
+    SystemLogging,
     SystemPanic
 }

@@ -9,5 +9,6 @@ public record InstrumentState(
         String instrumentName,
         ZonedDateTime enterTime,
         Date tradingDay,
-        int stateCode) {
+        int stateCode,
+        boolean trading) {
 }

@@ -55,7 +55,7 @@ class QuickEngineImpl implements QuickEngine {
     @Override
     public void run() {
         final Source source = SourceFactory.lookupSource(sourceClass);
-        final String sourceId = EventUtils.getSourceId(source);
+        final String sourceId = EventUtils.getInstanceId(source);
 
         source.handledBy((Trade trade) -> sourceInput(trade, EventType.TradeUpdate, sourceId));
         source.handledBy((InstrumentState state) -> sourceInput(state, EventType.InstrumentStateUpdate, sourceId));
@@ -63,7 +63,7 @@ class QuickEngineImpl implements QuickEngine {
         source.handledBy(((OrderState state) -> sourceInput(state, EventType.OrderStateUpdate, sourceId)));
         source.subscribe(new Subscription("Default Quick Engine", subscribeId.toArray(new String[0]), 0));
 
-        router.listenByType(new SourceAdapter(source), EventType.OrderInsertion, EventType.Subscription);
+        router.listenByType(new OrderInsertListener(source, router), EventType.OrderInsertion, EventType.Subscription);
 
         subscribeId = null;
         quick = null;
