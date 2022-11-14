@@ -4,30 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/InstrumentState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/InstrumentStateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderStateHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Snapshot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/SnapshotHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Source.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/SourceFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Subscription.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Trade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/TradeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.web/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/io.zettar.web/src/main/java/io/zettar/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="Add project skeleton.">
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventSource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventSourceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Quick.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickBuilderImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickHandlerWrapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +30,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Record" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Record" />
+        <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,20 +51,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "jdk.selected.JAVA_MODULE": "19",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;19&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="io.zettar.core" />
+      <recent name="io.zettar.core.quick" />
       <recent name="io.zettar" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -90,7 +85,19 @@
       <option name="presentableId" value="Default" />
       <updated>1668319734507</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add project skeleton.">
+      <created>1668327690387</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668327690387</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:org.eclipse.persistence:org.eclipse.persistence.core" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -105,5 +112,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add project skeleton." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add project skeleton." />
   </component>
 </project>
