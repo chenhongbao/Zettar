@@ -53,7 +53,7 @@ public class EventRouter {
         subscriber.subscribeTypeListener(listener, types);
     }
 
-    public void listenByOrigin(EventListener listener, EventOriginType... origins) {
+    public void listenByOrigin(EventListener listener, EventSourceType... origins) {
         subscriber.subscribeOriginListener(listener, origins);
     }
 
@@ -63,18 +63,18 @@ public class EventRouter {
 
     private <T> T logIfNull(T object, String message) {
         if (object == null) {
-            publish(new Event<>(EventUtils.getEventId(), "Default Event Router", EventType.SystemLogging, new EventOrigin(EventOriginType.InternalSystem, EventUtils.getInstanceId(this)), ZonedDateTime.now(), new LogRecord(Level.WARNING, message)));
+            systemLog(message);
         }
         return object;
     }
 
     private void systemLog(String message) {
-        publish(new Event<>(EventUtils.getEventId(), "Default Event Router", EventType.SystemLogging, new EventOrigin(EventOriginType.InternalSystem, EventUtils.getInstanceId(this)), ZonedDateTime.now(), new LogRecord(Level.WARNING, message)));
+        publish(new Event<>(EventUtils.getEventId(), EventUtils.getInstanceId(this), "Default Event Router Group", EventType.SystemLogging, EventSourceType.InternalSystem, ZonedDateTime.now(), new LogRecord(Level.WARNING, message)));
     }
 
     private class EventSubscriber {
         private final ConcurrentHashMap<EventType, ConcurrentSkipListSet<EventListener>> eventTypes = new ConcurrentHashMap<>();
-        private final ConcurrentHashMap<EventOriginType, ConcurrentSkipListSet<EventListener>> originTypes = new ConcurrentHashMap<>();
+        private final ConcurrentHashMap<EventSourceType, ConcurrentSkipListSet<EventListener>> originTypes = new ConcurrentHashMap<>();
         private final ConcurrentSkipListSet<EventListener> all = new ConcurrentSkipListSet<>(new EventListenerComparator());
 
         public void publish(Event<?> event) {
@@ -84,9 +84,9 @@ public class EventRouter {
                     eventTypes.get(type).parallelStream().forEach(listener -> tryCatch(() -> listener.listen(event)));
                 }
 
-                EventOrigin origin = event.origin();
-                if (logIfNull(origin, "Null origin.") != null && logIfNull(origin.type(), "Null origin type.") != null && originTypes.containsKey(origin.type())) {
-                    originTypes.get(origin.type()).parallelStream().forEach(listener -> tryCatch(() -> listener.listen(event)));
+                EventSourceType originType = event.sourceType();
+                if (logIfNull(originType, "Null origin type.") != null && originTypes.containsKey(originType)) {
+                    originTypes.get(originType).parallelStream().forEach(listener -> tryCatch(() -> listener.listen(event)));
                 }
 
                 all.parallelStream().forEach(listener -> tryCatch(() -> listener.listen(event)));
@@ -105,13 +105,13 @@ public class EventRouter {
             all.add(listener);
         }
 
-        public void subscribeOriginListener(EventListener listener, EventOriginType[] origins) {
-            for (EventOriginType origin : origins) {
+        public void subscribeOriginListener(EventListener listener, EventSourceType[] origins) {
+            for (EventSourceType origin : origins) {
                 subscribeSingleOrigin(listener, origin);
             }
         }
 
-        private void subscribeSingleOrigin(EventListener listener, EventOriginType origin) {
+        private void subscribeSingleOrigin(EventListener listener, EventSourceType origin) {
             subscribeGenericType(originTypes, listener, origin);
         }
 

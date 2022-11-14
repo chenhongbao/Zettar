@@ -2,14 +2,14 @@ package io.zettar;
 
 public class SourceException extends RuntimeException{
     private final String message;
-    private final int code;
+    private final Integer code;
 
-    public SourceException(int code, String message) {
+    public SourceException(Integer code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    public int getCode() {
+    public Integer getCode() {
         return code;
     }
 

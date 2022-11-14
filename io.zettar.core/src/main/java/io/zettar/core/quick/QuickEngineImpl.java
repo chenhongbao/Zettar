@@ -10,20 +10,17 @@ import java.util.List;
 
 class QuickEngineImpl implements QuickEngine {
     private final EventRouter router = EventRouter.createRouter();
-
     private String sourceClass;
-    private QuickImpl quick;
     private HashSet<String> subscribeId;
 
     QuickEngineImpl() {
-        quick = new QuickImpl(router);
         subscribeId = new HashSet<>();
     }
 
     @Override
-    public QuickEngine handledBy(QuickHandler handler, String... instrumentId) {
+    public QuickEngine handledBy(String clientId, QuickHandler handler, String... instrumentId) {
         List<String> id = Arrays.asList(instrumentId);
-        router.listenByOrigin(new QuickHandlerWrapper(quick, handler, id), EventOriginType.SourceInput);
+        router.listenByOrigin(new QuickHandlerWrapper(new QuickImpl(clientId, router), handler, id), EventSourceType.SourceInput);
         subscribeId.addAll(id);
         return this;
     }
@@ -41,7 +38,7 @@ class QuickEngineImpl implements QuickEngine {
     }
 
     @Override
-    public QuickEngine listenByOrigin(EventListener listener, EventOriginType... origins) {
+    public QuickEngine listenByOrigin(EventListener listener, EventSourceType... origins) {
         router.listenByOrigin(listener, origins);
         return this;
     }
@@ -55,21 +52,19 @@ class QuickEngineImpl implements QuickEngine {
     @Override
     public void run() {
         final Source source = SourceFactory.lookupSource(sourceClass);
-        final String sourceId = EventUtils.getInstanceId(source);
+        final String originId = EventUtils.getInstanceId(source);
 
-        source.handledBy((Trade trade) -> sourceInput(trade, EventType.TradeUpdate, sourceId));
-        source.handledBy((InstrumentState state) -> sourceInput(state, EventType.InstrumentStateUpdate, sourceId));
-        source.handledBy((Snapshot snap) -> sourceInput(snap, EventType.SnapshotUpdate, sourceId));
-        source.handledBy(((OrderState state) -> sourceInput(state, EventType.OrderStateUpdate, sourceId)));
+        source.handledBy((Trade trade) -> sourceInput(trade, EventType.TradeUpdate, originId));
+        source.handledBy((InstrumentState state) -> sourceInput(state, EventType.InstrumentStateUpdate, originId));
+        source.handledBy((Snapshot snap) -> sourceInput(snap, EventType.SnapshotUpdate, originId));
+        source.handledBy(((OrderState state) -> sourceInput(state, EventType.OrderStateUpdate, originId)));
         source.subscribe(new Subscription("Default Quick Engine", subscribeId.toArray(new String[0]), 0));
 
         router.listenByType(new OrderInsertListener(source, router), EventType.OrderInsertion, EventType.Subscription);
-
         subscribeId = null;
-        quick = null;
     }
 
-    private <T> void sourceInput(T object, EventType type, String sourceId) {
-        router.publish(new Event<T>(EventUtils.getEventId(), "Default Source Input", type, new EventOrigin(EventOriginType.SourceInput, sourceId), ZonedDateTime.now(), object));
+    private <T> void sourceInput(T object, EventType type, String originId) {
+        router.publish(new Event<>(EventUtils.getEventId(), originId, "Default-Source-Input-Group", type, EventSourceType.SourceInput, ZonedDateTime.now(), object));
     }
 }

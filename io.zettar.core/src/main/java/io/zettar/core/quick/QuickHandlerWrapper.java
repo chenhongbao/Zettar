@@ -7,19 +7,18 @@ import io.zettar.Trade;
 import io.zettar.core.event.Event;
 import io.zettar.core.event.EventListener;
 
-import java.time.Duration;
-import java.time.ZonedDateTime;
 import java.util.Collection;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.HashSet;
 
 class QuickHandlerWrapper implements EventListener {
-    private final ConcurrentHashMap<String, Boolean> gotStates = new ConcurrentHashMap<>();
+    private final HashSet<String> subscribe = new HashSet<>();
     private final QuickHandler client;
     private final QuickImpl impl;
 
     QuickHandlerWrapper(QuickImpl quick, QuickHandler handler, Collection<String> instrumentId) {
         impl = quick;
         client = handler;
+        subscribe.addAll(instrumentId);
     }
 
     @Override
@@ -27,10 +26,9 @@ class QuickHandlerWrapper implements EventListener {
         switch (event.type()) {
             case SnapshotUpdate -> {
                 Snapshot snap = (Snapshot) event.event();
-                client.handle(snap, impl);
-                if (!gotStates.getOrDefault(snap.instrumentId(), false)) {
-                    impl.update(getFakeInstrumentState(snap));
-                    gotStates.put(snap.instrumentId(), true);
+                impl.update(snap);
+                if (subscribe.contains(snap.instrumentId())) {
+                    client.handle(snap, impl);
                 }
             }
             case InstrumentStateUpdate -> impl.update((InstrumentState) event.event());
@@ -38,11 +36,5 @@ class QuickHandlerWrapper implements EventListener {
             case TradeUpdate -> impl.update((Trade) event.event());
             default -> throw new UnsupportedOperationException("Unsupported event type: " + event.type() + ".");
         }
-    }
-
-    private InstrumentState getFakeInstrumentState(Snapshot snap) {
-        long seconds = Duration.between(snap.whenUpdated(), ZonedDateTime.now()).getSeconds();
-        /* Lag 5 seconds at most. */
-        return new InstrumentState(snap.exchangeId(), snap.instrumentId(), snap.instrumentName(), ZonedDateTime.now(), snap.tradingDay(), 0, seconds <= 5);
     }
 }

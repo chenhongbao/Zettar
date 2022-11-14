@@ -1,7 +1,6 @@
 package io.zettar;
 
 public record Order(
-        String clientId,
         String orderId,
         String exchangeId,
         String instrumentId,
@@ -10,7 +9,7 @@ public record Order(
         long quantity,
         boolean buyOrSell,
         boolean openOrClose,
-        boolean todayOrNot,
+        Offset todayOrNot,
         int options) {
 
     public static final int OPTION_FAK = 0x00000001;

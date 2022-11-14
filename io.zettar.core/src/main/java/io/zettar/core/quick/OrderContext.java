@@ -1,23 +1,16 @@
 package io.zettar.core.quick;
 
+import io.zettar.Order;
 import io.zettar.OrderState;
 import io.zettar.Trade;
+import io.zettar.core.event.Event;
 
 public class OrderContext {
-    public void append(OrderState state) {
+    public OrderContext(Event<Order> event) {
 
     }
 
-    public void append(Trade trade) {
-
-    }
-
-    public void wakeUp() {
-
-
-    }
-
-    public void sleep() {
+    public void update(OrderState state) {
 
     }
 }

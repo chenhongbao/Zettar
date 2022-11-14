@@ -12,5 +12,8 @@ public record Trade(
         ZonedDateTime whenUpdated,
         Date tradingDay,
         double price,
-        long volume) {
+        long volume,
+        boolean buyOrSell,
+        boolean openOrClose,
+        Offset todayOrNot) {
 }
