@@ -1,6 +1,6 @@
 package io.zettar.core;
 
-public enum OriginType {
+public enum EventOriginType {
     SourceInput,
     InternalSystem,
     WebClient,

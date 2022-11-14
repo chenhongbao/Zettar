@@ -2,12 +2,10 @@ package io.zettar.core;
 
 public enum EventType {
     OrderInsertion,
-    OrderDeletion,
+    Subscription,
     OrderStateUpdate,
     TradeUpdate,
     InstrumentStateUpdate,
-    Subscription,
-    UnSubscription,
     SnapshotUpdate,
     Logging,
     SystemInfo,

@@ -9,6 +9,8 @@ public interface QuickEngine {
 
     QuickEngine handledBy(QuickHandler handler, String... instrumentId);
     QuickEngine setSource(String sourceClassPath);
-    QuickEngine addListener(EventListener... listeners);
+    QuickEngine listenByType(EventListener listener, EventType... types);
+    QuickEngine listenByOrigin(EventListener listener, EventOriginType... origins);
+    QuickEngine listen(EventListener listener);
     void run();
 }

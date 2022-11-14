@@ -1,34 +1,24 @@
 package io.zettar.core.internal;
 
 import io.zettar.*;
+import io.zettar.core.Event;
 import io.zettar.core.EventListener;
+import io.zettar.core.EventType;
+import io.zettar.core.EventOriginType;
 
-public class EventRouter implements TradeHandler, SnapshotHandler, OrderStateHandler, InstrumentStateHandler {
-    @Override
-    public void handle(InstrumentState state) {
+public class EventRouter {
+    public void publish(Event event) {
+    }
+
+    public void listenByType(EventListener listener, EventType... types) {
 
     }
 
-    @Override
-    public void handle(OrderState state) {
+    public void listenByOrigin(EventListener listener, EventOriginType... origins) {
 
     }
 
-    @Override
-    public void handle(Snapshot snapshot) {
-
-    }
-
-    @Override
-    public void handle(Trade trade) {
-
-    }
-
-    public void addListener(EventListener listener) {
-
-    }
-
-    public void setSource(Source source) {
+    public void listen(EventListener listener) {
 
     }
 }

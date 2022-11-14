@@ -1,6 +1,6 @@
 package io.zettar.core;
 
 public record EventOrigin(
-        OriginType type,
+        EventOriginType type,
         String sourceId) {
 }
