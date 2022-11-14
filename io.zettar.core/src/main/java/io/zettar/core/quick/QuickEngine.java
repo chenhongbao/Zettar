@@ -1,6 +1,8 @@
-package io.zettar.core;
+package io.zettar.core.quick;
 
-import io.zettar.core.internal.QuickEngineImpl;
+import io.zettar.core.event.EventListener;
+import io.zettar.core.event.EventOriginType;
+import io.zettar.core.event.EventType;
 
 public interface QuickEngine {
     static QuickEngine createEngine() {

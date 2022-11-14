@@ -1,4 +1,4 @@
-package io.zettar.core;
+package io.zettar.core.event;
 
 public enum EventType {
     OrderInsertion,

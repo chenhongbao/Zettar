@@ -1,12 +1,14 @@
-package io.zettar.core.internal;
-
-import io.zettar.core.Event;
-import io.zettar.core.EventListener;
-import io.zettar.core.EventType;
-import io.zettar.core.EventOriginType;
+package io.zettar.core.event;
 
 public class EventRouter {
-    public void publish(Event event) {
+    private EventRouter(){
+    }
+
+    public static EventRouter createRouter() {
+        return new EventRouter();
+    }
+
+    public void publish(Event<?> event) {
     }
 
     public void listenByType(EventListener listener, EventType... types) {

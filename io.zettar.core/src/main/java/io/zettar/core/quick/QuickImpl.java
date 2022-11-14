@@ -1,7 +1,7 @@
-package io.zettar.core.internal;
+package io.zettar.core.quick;
 
 import io.zettar.*;
-import io.zettar.core.Quick;
+import io.zettar.core.event.EventRouter;
 
 import java.util.logging.Logger;
 

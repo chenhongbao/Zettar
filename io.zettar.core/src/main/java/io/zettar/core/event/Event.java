@@ -1,4 +1,4 @@
-package io.zettar.core;
+package io.zettar.core.event;
 
 import java.time.ZonedDateTime;
 

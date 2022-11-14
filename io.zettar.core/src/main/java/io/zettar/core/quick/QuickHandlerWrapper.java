@@ -1,20 +1,19 @@
-package io.zettar.core.internal;
+package io.zettar.core.quick;
 
 import io.zettar.InstrumentState;
 import io.zettar.OrderState;
 import io.zettar.Snapshot;
 import io.zettar.Trade;
-import io.zettar.core.Event;
-import io.zettar.core.EventListener;
-import io.zettar.core.QuickHandler;
+import io.zettar.core.event.Event;
+import io.zettar.core.event.EventListener;
 
 import java.util.Collection;
 
-public class QuickHandlerWrapper implements EventListener {
+class QuickHandlerWrapper implements EventListener {
     private final QuickHandler client;
     private final QuickImpl impl;
 
-    public QuickHandlerWrapper(QuickImpl quick, QuickHandler handler, Collection<String> instrumentId) {
+    QuickHandlerWrapper(QuickImpl quick, QuickHandler handler, Collection<String> instrumentId) {
         impl = quick;
         client = handler;
     }

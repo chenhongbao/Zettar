@@ -1,17 +1,17 @@
-package io.zettar.core.internal;
+package io.zettar.core.quick;
 
 import io.zettar.Order;
 import io.zettar.Source;
 import io.zettar.Subscription;
-import io.zettar.core.Event;
-import io.zettar.core.EventListener;
+import io.zettar.core.event.Event;
+import io.zettar.core.event.EventListener;
 
 import java.util.Objects;
 
-public class SourceAdapter implements EventListener {
+class SourceAdapter implements EventListener {
     private final Source src;
 
-    public SourceAdapter(Source source) {
+    SourceAdapter(Source source) {
         Objects.requireNonNull(source);
         src = source;
     }

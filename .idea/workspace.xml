@@ -4,21 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="Implement getSourceId() and getEventId().">
+    <list default="true" id="263b6564-ced6-4cc2-8bd4-e69d57209de4" name="Changes" comment="Generic Event&lt;T&gt;.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderState.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/OrderState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Snapshot.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Snapshot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Source.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Source.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Subscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Trade.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.api/src/main/java/io/zettar/Trade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOrigin.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOrigin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickEngineImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickHandlerWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickHandlerWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/SourceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/SourceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/event/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/event/EventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOrigin.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/event/EventOrigin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventOriginType.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/event/EventOriginType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/EventType.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/event/EventType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/Quick.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/quick/Quick.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/quick/QuickEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/QuickHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/quick/QuickHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventRouter.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/event/EventRouter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/EventUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/event/EventUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickEngineImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/quick/QuickEngineImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickHandlerWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/quick/QuickHandlerWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/QuickImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/quick/QuickImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/internal/SourceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/io.zettar.core/src/main/java/io/zettar/core/quick/SourceAdapter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,10 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.zettar.core.internal" />
+      <recent name="io.zettar.core" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="io.zettar.core.internal" />
       <recent name="io.zettar" />
@@ -82,7 +87,7 @@
       <module name="io.zettar.core" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.zettar.core.internal.*" />
+          <option name="PATTERN" value="io.zettar.core.quick.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668393783120</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Generic Event&lt;T&gt;.">
+      <created>1668396933941</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668396933941</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -199,6 +211,7 @@
     <MESSAGE value="Create EventRouter to handle all events." />
     <MESSAGE value="Move all data routing into EventRouter." />
     <MESSAGE value="Implement getSourceId() and getEventId()." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement getSourceId() and getEventId()." />
+    <MESSAGE value="Generic Event&lt;T&gt;." />
+    <option name="LAST_COMMIT_MESSAGE" value="Generic Event&lt;T&gt;." />
   </component>
 </project>

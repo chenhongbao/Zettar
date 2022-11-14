@@ -1,21 +1,21 @@
-package io.zettar.core.internal;
+package io.zettar.core.quick;
 
 import io.zettar.*;
-import io.zettar.core.*;
+import io.zettar.core.event.*;
 
 import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class QuickEngineImpl implements QuickEngine {
-    private final EventRouter router = new EventRouter();
+class QuickEngineImpl implements QuickEngine {
+    private final EventRouter router = EventRouter.createRouter();
 
     private String sourceClass;
     private QuickImpl quick;
     private HashSet<String> subscribeId;
 
-    public QuickEngineImpl() {
+    QuickEngineImpl() {
         quick = new QuickImpl(router);
         subscribeId = new HashSet<>();
     }
